@@ -51,7 +51,10 @@ def extract_frame(path, output_folder, start_time=None, end_time=None):
     
     #get name of file, create folder for file if folder does not exists
     name = os.path.basename(path)
+    output_folder =os.path.join(output_folder, 'output')
     output_dir = os.path.join(output_folder, name)
+    
+    if not os.path.exists(output_folder): os.mkdir(output_folder)
     if not os.path.exists(output_dir): os.mkdir(output_dir)
 
     #set current position to start_frame and calculate last frame
