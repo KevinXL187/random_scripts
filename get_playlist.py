@@ -1,3 +1,5 @@
+import ch_character_converter
+
 # get a playlist from spotify using Spotify Web API
 def spotify_playlist():
     pass
@@ -12,5 +14,7 @@ def compare_playlist():
         pass
 
 # export recorded list of missing songs
-def export_list():
-    pass
+def export_list(missing_list):
+    with open("missing_playlist.txt", 'a', encoding='utf-16') as curFi:
+        for i in missing_list:
+            curFi.write(i)
