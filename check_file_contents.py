@@ -1,11 +1,17 @@
 import os, shutil, urllib.parse
 
 def is_empty_or_whitespace(file_path):
+    """
+        Checks if a file is empty or contains only whitespace
+    """
     with open(file_path, 'r', encoding='utf-8') as file:
         content = file.read()
         return content.strip() == ''
 
 def is_single_url(file_path):
+    """
+        Checks if a file contains exactly one line that is a valid URL.
+    """
     with open(file_path, 'r', encoding='utf-8') as file:
         content = file.read().strip()
         # Split content by newlines and remove empty strings
@@ -17,6 +23,8 @@ def is_single_url(file_path):
             return parsed.scheme != '' and parsed.netloc != ''
         
         return False
+
+def word_count_regulated():pass
 
 def move_directory(directory_path, destination_dir):
     directory_name = os.path.basename(directory_path)
