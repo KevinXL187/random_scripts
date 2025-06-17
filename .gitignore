@@ -163,3 +163,5 @@ cython_debug/
 output/
 The Girl Downstairs/
 STEAM_API_KEY.txt
+*.sh
+Models/
